@@ -1,0 +1,66 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200&family=Patrick+Hand&display=swap');
+body{
+    background-color: #DFF6FF;
+}
+
+h1{
+    text-align: center;
+    margin: 25px;
+    font-size: 70px;
+    color: #06283D;
+    font-family: 'Patrick Hand', cursive;
+}
+
+label{
+    text-align: center;
+    font-size: 18px;
+    color: #06283D;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* .row{
+    margin-left: 28em;
+} */
+
+form{
+    margin: auto;
+    width: 350px;
+}
+
+#button{
+    margin: auto;
+    margin-top: 3em;
+    margin-bottom: 3em;
+    background-color: #06283D;
+    border: 2px solid #06283D;
+    font-size: 24px;
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 10px;
+
+    display: block;
+}
+
+#button:hover{
+    background-color: #47B5FF;
+    color: #06283D;
+}
+
+textarea{
+    margin-right: 20em;
+    resize: none;
+}
+
+form textarea:hover{
+    border: 3px solid #06283D;
+}
+
+.output{
+    margin: auto;
+    width: 520px;
+}
+
+.output textarea{
+    margin: 20px;
+    resize: none;
+}
