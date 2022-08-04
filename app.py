@@ -1,5 +1,4 @@
 # coding: utf-8
-from email.errors import MalformedHeaderDefect
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
@@ -7,7 +6,7 @@ from sklearn import metrics
 from flask import Flask, request, render_template
 import pickle
 
-app = Flask("__name__")
+app = Flask("_name_")
 
 df_1 = pd.read_csv("first_telc.csv")
 
@@ -44,6 +43,7 @@ def predict():
     '''
 
     inputQuery1 = request.form['query1']
+    print(inputQuery1)
     inputQuery2 = request.form['query2']
     inputQuery3 = request.form['query3']
     inputQuery4 = request.form['query4']

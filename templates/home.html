@@ -1,201 +1,237 @@
 <html>
 
 <head>
-    <title>Churn Prediction</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="static\styles\style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<title>Churn Prediction</title>
 
-    <link rel="stylesheet" href="static\styles\style.css">
 </head>
 
 <body>
+	<h1>Telecom Churn Prediction</h1>
+	<div class="container">
+		<div class="row">
 
-    <div class="container">
-        <h1>Telecom Churn Prediction</h1>
-        <div class="row">
+			<form action="http://localhost:5000/" method="POST">
+				<div class="col-sm-9">
+					<div class="form-group">
+						<div class="input-group">
+							<span class="input-group-addon">Senior Citizen :</span>
+							<select name="query1" class="selectpicker form-control" id="query1">
+								<option value="Select">Select</option>
+								<option value="1">1</option>
+								<option value="0">0</option>
+							</select>
+						</div>
+					</div>
 
-            <form action="http://localhost:5000/" method="POST">
-                <div class="col-sm-9">
-                <div class="row">
+					<div class="form-group  purple-border charges">
+						<span for="comment">Monthly Charges :</span>
+						<span><textarea class="form-control charges" rows="2" id="query2" name="query2" rows="2"
+								cols="5" autofocus>{{query2}}</textarea></span>
+					</div>
+					<div class="form-group  purple-border charges">
+						<span for="comment">Total Charges :</span>
+						<span><textarea class="form-control charges" rows="2" id="query3" name="query3" rows="2"
+								cols="5" autofocus>{{query3}}</textarea></span>
+					</div>
+					<div class="form-group">
+						<div class="input-group">
+							<span class="input-group-addon">Gender :</span>
+							<select name="query4" class="selectpicker form-control" id="query4">
+								
+								<option value="Select">Select</option>
+								<option value="Male">Male</option>
+								<option value="Female">Female</option>
+							</select>
+						</div>
+						
+					</div>
 
-                <div class="form-group  purple-border " style="text-align: center;">
-                    <label for="comment">Senior Citizen:</label>
-                    <textarea class="form-control" rows="2" id="query1" name="query1" rows="2" cols="5"
-                            autofocus>{{query1}}</textarea>
-                </div>
+					<div class="form-group">
+						<div class="input-group">
+							<span class="input-group-addon">Partner : </span>
+							<select name="query5" class="selectpicker form-control" id="query5">
+						
+								<option value="Select">Select</option>
+								<option value="Yes">Yes</option>
+								<option value="No">No</option>
+							</select>
+						</div>
+						
+					</div>
 
+					<div class="form-group">
+						<div class="input-group">
+							<span class="input-group-addon">Dependents :</span>
+							<select name="query6" class="selectpicker form-control" id="query6">
+								<option value="Select">Select</option>
+								<option value="Yes">Yes</option>
+								<option value="No">No</option>
+							</select>
+						</div>
+					</div>
 
-                <!-- <form action="/output/" name="InputCacheCheck" method="post">
-                    <div class="input-prepend input-append">
-                        <div class="btn-group">
-                            <p>Senior Citizen</p>
-                            <button class="btn dropdown-toggle" name="recordinput" data-toggle="dropdown">
-                                Select
-                                <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">0</a></li>
-                                <li><a href="#">1</a></li>
-                            </ul>
+					<div class="form-group">
+						<div class="input-group">
+							<span class="input-group-addon">Phone Service :</span>
+							<select name="query7" class="selectpicker form-control" id="query7">
+								<option value="Select">Select</option>
+								<option value="Yes">Yes</option>
+								<option value="No">No</option>
+							</select>
+						</div>
+						
+					</div>
 
-                        </div>
-                    </div>
-                </form> -->
+					<div class="form-group">
+						<div class="input-group">
+							<span class="input-group-addon">Multiple Lines :</span>
+							<select name="query8" class="selectpicker form-control" id="query8">
+								<option value="Select">Select</option>
+								<option value="Yes">Yes</option>
+								<option value="No">No</option>
+							</select>
+						</div>
+					</div>
 
+					<div class="form-group">
+						<div class="input-group">
+							<span class="input-group-addon">Internet Service :</span>
+							<select name="query9" class="selectpicker form-control" id="query9">
+								<option value="Select">Select</option>
+								<option value="DSL">DSL</option>
+								<option value="Fiber optic">Fiber optic</option>
+								<option value="No">No</option>
+							</select>
+						</div>
+					</div>
 
+					<div class="form-group">
+						<div class="input-group">
+							<span class="input-group-addon">Online Security :</span>
+							<select name="query10" class="selectpicker form-control" id="query10">
+								<option value="Select">Select</option>
+								<option value="Yes">Yes</option>
+								<option value="No">No</option>
+							</select>
+						</div>
+						
+					</div>
 
-                <div class="form-group  purple-border " style="text-align: center;">
-                    <label for="comment">Monthly Charges:</label>
-                    <textarea class="form-control" rows="2" id="query2" name="query2" rows="2" cols="5"
-                            autofocus>{{query2}}</textarea>
-                </div>
-                <!-- </div> -->
-                <div class="form-group  purple-border " style="text-align: center;">
-                    <label for="comment">Total Charges:</label>
-                    <textarea class="form-control" rows="2" id="query3" name="query3" rows="2" cols="5"
-                            autofocus>{{query3}}</textarea>
-                </div>
-                <div class="form-group  purple-border " style="text-align: center;">
-                    <label for="comment">Gender:</label>
-                    <textarea class="form-control" rows="2" id="query4" name="query4" rows="2" cols="5"
-                            autofocus>{{query4}}</textarea>
-                </div>
-                <div class="form-group  purple-border" style="text-align: center;">
-                    <label for="comment">Partner:</label>
-                    <textarea class="form-control" rows="2" id="query5" name="query5" rows="2" cols="5"
-                            autofocus>{{query5}}</textarea>
-                </div>
-                <div class="form-group  purple-border" style="text-align: center;">
-                    <label for="comment">Dependents:</label>
-                    <textarea class="form-control" rows="2" id="query6" name="query6" rows="2" cols="5"
-                            autofocus>{{query6}}</textarea>
-                </div>
-                <div class="form-group  purple-border" style="text-align: center;">
-                    <label for="comment">Phone Service:</label>
-                    <textarea class="form-control" rows="2" id="query7" name="query7" rows="2" cols="5"
-                            autofocus>{{query7}}</textarea>
-                </div>
-                <div class="form-group  purple-border" style="text-align: center;">
-                    <label for="comment">Multiple Lines:</label>
-                    <textarea class="form-control" rows="2" id="query8" name="query8" rows="2" cols="5"
-                            autofocus>{{query8}}</textarea>
-                </div>
-                <div class="form-group  purple-border" style="text-align: center;">
-                    <label for="comment">Internet Service:</label>
-                    <textarea class="form-control" rows="2" id="query9" name="query9" rows="2" cols="5"
-                            autofocus>{{query9}}</textarea>
-                </div>
-                <div class="form-group  purple-border" style="text-align: center;">
-                    <label for="comment">Online Security:</label>
-                    <textarea class="form-control" rows="2" id="query10" name="query10" rows="2" cols="5"
-                            autofocus>{{query10}}</textarea>
-                </div>
-                <div class="form-group  purple-border" style="text-align: center;">
-                    <label for="comment">Online Backup:</label>
-                    <textarea class="form-control" rows="2" id="query11" name="query11" rows="2" cols="5"
-                            autofocus>{{query11}}</textarea>
-                </div>
-                <div class="form-group  purple-border" style="text-align: center;">
-                    <label for="comment">Device Protection:</label>
-                    <textarea class="form-control" rows="2" id="query12" name="query12" rows="2" cols="5"
-                            autofocus>{{query12}}</textarea>
-                </div>
-                <div class="form-group  purple-border" style="text-align: center;">
-                    <label for="comment">Tech Support:</label>
-                    <textarea class="form-control" rows="2" id="query13" name="query13" rows="2" cols="5"
-                            autofocus>{{query13}}</textarea>
-                </div>
-                <div class="form-group  purple-border" style="text-align: center;">
-                    <label for="comment">Streaming TV:</label>
-                    <textarea class="form-control" rows="2" id="query14" name="query14" rows="2" cols="5"
-                            autofocus>{{query14}}</textarea>
-                </div>
-                <div class="form-group  purple-border" style="text-align: center;">
-                    <label for="comment">Streaming Movies:</label>
-                    <textarea class="form-control" rows="2" id="query15" name="query15" rows="2" cols="5"
-                            autofocus>{{query15}}</textarea>
-                </div>
-                <div class="form-group  purple-border" style="text-align: center;">
-                    <label for="comment">Contract:</label>
-                    <textarea class="form-control" rows="2" id="query16" name="query16" rows="2" cols="5"
-                            autofocus>{{query16}}</textarea>
-                    <!-- <input type="text" class="form-control" id="query16" name="query16"> -->
-                </div>
-                <div class="form-group  purple-border" style="text-align: center;">
-                    <label for="comment">Paperless Billing:</label>
-                    <textarea class="form-control" rows="2" id="query17" name="query17" rows="2" cols="5"
-                            autofocus>{{query17}}</textarea>
-                    <!-- <input type="text" class="form-control" id="query17" name="query17"> -->
-                </div>
-                <div class="form-group  purple-border" style="text-align: center;">
-                    <label for="comment">Payment Method:</label>
-                    <textarea class="form-control" rows="2" id="query18" name="query18" rows="2" cols="5"
-                            autofocus>{{query18}}</textarea>
-                    <!-- <input type="text" class="form-control" id="query18" name="query18"> -->
-                </div>
-                <div class="form-group  purple-border" style="text-align: center;">
-                    <label for="comment">Tenure:</label>
-                    <textarea class="form-control" rows="2" id="query19" name="query19" rows="2" cols="5"
-                            autofocus>{{query19}}</textarea>
-                    <!-- <input type="text" class="form-control" id="query19" name="query19"> -->
-                </div>
-                <!-- </div> -->
-                <div>
-                    <button type="submit" class="btn btn-primary btn-block" name="submit" id="button">SUBMIT</button>
-                </div>
-            </form>
-        </div>
+					<div class="form-group">
+						<div class="input-group">
+							<span class="input-group-addon">Online Backup :</span>
+							<select name="query11" class="selectpicker form-control" id="query11">
+								<option value="Select">Select</option>
+								<option value="Yes">Yes</option>
+								<option value="No">No</option>
+							</select>
+						</div>
+					</div>
 
-        <div class="output">
-                <textarea class="form-control" rows="2" id="comment" name="query6" rows="2" cols="5"
-                    autofocus>{{output1}}</textarea>
-                <textarea class="form-control" rows="2" id="comment" name="query7" rows="2" cols="5"
-                    autofocus>{{output2}}</textarea>
+					<div class="form-group">
+						<div class="input-group">
+							<span class="input-group-addon">Device Protection :</span>
+							<select name="query12" class="selectpicker form-control" id="query12">
+								<option value="Select">Select</option>
+								<option value="Yes">Yes</option>
+								<option value="No">No</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="input-group">
+							<span class="input-group-addon">Tech Support :</span>
+							<select name="query13" class="selectpicker form-control" id="query13">
+								<option value="Select">Select</option>
+								<option value="Yes">Yes</option>
+								<option value="No">No</option>
+							</select>
+						</div>
+					</div>
 
-        </div>
-    </div>
+					<div class="form-group">
+						<div class="input-group">
+							<span class="input-group-addon">Streaming TV :</span>
+							<select name="query14" class="selectpicker form-control" id="query14">
+								<option value="Select">Select</option>
+								<option value="Yes">Yes</option>
+								<option value="No">No</option>
+							</select>
+						</div>
+					</div>
 
-    <!-- <script>
-        // $('#demolist li').on('click', function(){
-        //     $('#datebox').val($(this).text());
-        // });
+					<div class="form-group">
+						<div class="input-group">
+							<span class="input-group-addon">Streaming Movies :</span>
+							<select name="query15" class="selectpicker form-control" id="query15">
+								<option value="Select">Select</option>
+								<option value="Yes">Yes</option>
+								<option value="No">No</option>
+							</select>
+						</div>
+					</div>
 
+					<div class="form-group">
+						<div class="input-group">
+							<span class="input-group-addon">Contract :</span>
+							<select name="query16" class="selectpicker form-control" id="query16">
+								<option value="One year">One year</option>
+								<option value="Two year">Two year</option>
+								<option value="Month-to-month">Month-to-month</option>
+							</select>
+						</div>
+						
+					</div>
 
-        $(".dropdown-menu li a").click(function () {
-            var selText = $(this).text();
-            $(this).parents('.btn-group').find('.dropdown-toggle').html(selText + ' <span class="caret"></span>');
-            console.log(selText);
-        });
-    </script> -->
+					<div class="form-group">
+						<div class="input-group">
+							<span class="input-group-addon">Paperless Billing :</span>
+							<select name="query17" class="selectpicker form-control" id="query17">
+								<option value="Select">Select</option>
+								<option value="Yes">Yes</option>
+								<option value="No">No</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="input-group">
+							<span class="input-group-addon">Payment Method :</span>
+							<select name="query18" class="selectpicker form-control" id="query18">
+								<option value="Electronic check">Electronic check</option>
+								<option value="Mailed check">Mailed check</option>
+								<option value="Bank transfer (automatic)">Bank transfer (automatic)</option>
+								<option value="Credit card (automatic)">Credit card (automatic)</option>
+							</select>
+						</div>
+					</div>
 
+					<div class="form-group  purple-border">
+						<span for="comment">Tenure :</span>
+						<textarea class="form-control" rows="2" id="query19" name="query19" rows="2" cols="5"
+							autofocus>{{query19}}</textarea>
+					</div>
 
+				</div>
+				<div class="col-sm-3">
+					<button type="submit" class="btn btn-primary" name="submit" id="button">SUBMIT</button>
+				</div>
+			</form>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-9">
+				<textarea class="form-control output" rows="2" id="comment" name="query6" rows="2" cols="5"
+					autofocus>{{output1}}</textarea>
+				<textarea class="form-control output" rows="2" id="comment" name="query7" rows="2" cols="5"
+					autofocus>{{output2}}</textarea>
+			</div>
+		</div>
+	</div>
 </body>
 
 </html>
-
-
-<!-- <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Senior Citizen
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">0</a>
-                            <a class="dropdown-item" href="#">1</a>
-                        </div>
-                    </div> -->
-
-<!-- <div class="input-group">
-                        <input type="TextBox" ID="datebox" Class="form-control"></input>
-                        <div class="input-group-btn">
-                            <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-                                <span class="caret"></span>
-                            </button>
-                            <ul id="demolist" class="dropdown-menu">
-                                <li><a href="#">0</a></li>
-                                <li><a href="#">1</a></li>
-                            </ul>
-                        </div>
-                    </div> -->
